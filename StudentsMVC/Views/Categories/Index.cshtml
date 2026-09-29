@@ -1,0 +1,37 @@
+﻿@model List<ShopApplication.DTOs.CategoryDTOs.CategoryReadDTO>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h1>Categories</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Slug</th>
+            <th>Url</th>
+            <th>Active</th>
+            <th>Parent Id</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var category in Model)
+            {
+                <tr>
+                    <td>@category.Id</td>
+                    <td>@category.Name</td>
+                    <td>@category.Slug</td>
+                    <td>@category.Url</td>
+                    <td>@category.IsActive</td>
+                    <td>@category.ParentId</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
